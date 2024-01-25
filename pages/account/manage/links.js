@@ -2,32 +2,24 @@ import { authOptions } from "../../api/auth/[...nextauth]";
 import { getServerSession } from "next-auth/next";
 import { useState } from "react";
 import DocumentPlusIcon from "@heroicons/react/24/outline/DocumentPlusIcon";
+import { useRouter } from "next/router";
 import ArrowPathIcon from "@heroicons/react/24/outline/ArrowPathIcon";
 
 import { clientEnv } from "@config/schemas/clientSchema";
 import logger from "@config/logger";
 import PageHead from "@components/PageHead";
 import Page from "@components/Page";
-import Navigation from "@components/account/manage/navigation";
+import Navigation from "@components/account/manage/Navigation";
 import { getLinksApi } from "pages/api/account/manage/links";
 import Button from "@components/Button";
 import UserLink from "@components/user/UserLink";
 import { ReactSortable } from "react-sortablejs";
 import Notification from "@components/Notification";
 import Alert from "@components/Alert";
+import { PROJECT_NAME } from "@constants/index";
 
 export async function getServerSideProps(context) {
   const session = await getServerSession(context.req, context.res, authOptions);
-
-  if (!session) {
-    return {
-      redirect: {
-        destination: "/auth/signin",
-        permanent: false,
-      },
-    };
-  }
-
   const username = session.username;
 
   let links = [];
@@ -43,10 +35,28 @@ export async function getServerSideProps(context) {
 }
 
 export default function ManageLinks({ BASE_URL, username, links }) {
+  const router = useRouter();
   const [reorder, setReorder] = useState(false);
   const [showNotification, setShowNotification] = useState(false);
   const [linkList, setLinkList] = useState(links || []);
   const [linkListPrevious, setLinkListPrevious] = useState(links || []);
+
+  const { alert } = router.query;
+
+  const alerts = {
+    deleted: {
+      type: "success",
+      message: "Link Deleted Successfully",
+    },
+    created: {
+      type: "success",
+      message: "Link Created Successfully",
+    },
+    updated: {
+      type: "success",
+      message: "Link Updated Successfully",
+    },
+  };
 
   const saveOrder = async () => {
     const res = await fetch(`${BASE_URL}/api/account/manage/links`, {
@@ -67,10 +77,14 @@ export default function ManageLinks({ BASE_URL, username, links }) {
     <>
       <PageHead
         title="Manage Links"
-        description="Here you can manage your LinkFree links"
+        description={`Here you can manage your ${PROJECT_NAME} links`}
       />
 
       <Page>
+        {alert && (
+          <Alert type={alerts[alert].type} message={alerts[alert].message} />
+        )}
+
         <Navigation />
 
         <Notification
@@ -88,7 +102,10 @@ export default function ManageLinks({ BASE_URL, username, links }) {
           </Button>
 
           {!reorder && (
-            <Button onClick={() => setReorder(true)}>
+            <Button
+              onClick={() => setReorder(true)}
+              disabled={linkList.length < 2}
+            >
               <ArrowPathIcon className="h-5 w-5 mr-2" />
               REORDER
             </Button>
@@ -110,7 +127,7 @@ export default function ManageLinks({ BASE_URL, username, links }) {
           )}
         </div>
 
-        {!linkList.length && <Alert type="info" message="No links found" />}
+        {!linkList.length && <Alert type="info" message="No Links found" />}
 
         <ReactSortable
           list={linkList}

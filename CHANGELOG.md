@@ -1,45 +1,45 @@
-# [1.155.0](https://github.com/EddieHubCommunity/LinkFree/compare/v1.154.9...v1.155.0) (2023-07-11)
-
-
-### Features
-
-* daily app stats ([#8138](https://github.com/EddieHubCommunity/LinkFree/issues/8138)) ([85b852c](https://github.com/EddieHubCommunity/LinkFree/commit/85b852c1fb714c5f9a9b67af5082103e2d5a6291))
-
-
-
-## [1.154.9](https://github.com/EddieHubCommunity/LinkFree/compare/v1.154.8...v1.154.9) (2023-07-11)
+## [2.99.9](https://github.com/EddieHubCommunity/BioDrop/compare/v2.99.8...v2.99.9) (2024-01-22)
 
 
 ### Bug Fixes
 
-* release action skip on empty ([#8134](https://github.com/EddieHubCommunity/LinkFree/issues/8134)) ([923dc31](https://github.com/EddieHubCommunity/LinkFree/commit/923dc31bd18e3e437afd856708a33a4115a9c074))
+* manage link preview click ([#10164](https://github.com/EddieHubCommunity/BioDrop/issues/10164)) ([261c30c](https://github.com/EddieHubCommunity/BioDrop/commit/261c30c367ecd5d91042385dd58524357eb65c20))
 
 
 
-## [1.154.8](https://github.com/EddieHubCommunity/LinkFree/compare/v1.154.7...v1.154.8) (2023-07-11)
-
-
-### Reverts
-
-* Revert "fix: releases to skip if empty (#7496) (#7747)" (#8131) ([2f1ed2b](https://github.com/EddieHubCommunity/LinkFree/commit/2f1ed2badfdc9fdef40aaaa80825b6f1a4f6a662)), closes [#7496](https://github.com/EddieHubCommunity/LinkFree/issues/7496) [#7747](https://github.com/EddieHubCommunity/LinkFree/issues/7747) [#8131](https://github.com/EddieHubCommunity/LinkFree/issues/8131)
-
-
-
-## [1.154.7](https://github.com/EddieHubCommunity/LinkFree/compare/v1.154.6...v1.154.7) (2023-07-11)
+## [2.99.8](https://github.com/EddieHubCommunity/BioDrop/compare/v2.99.7...v2.99.8) (2024-01-21)
 
 
 ### Bug Fixes
 
-* releases to skip if empty ([#7496](https://github.com/EddieHubCommunity/LinkFree/issues/7496)) ([#7747](https://github.com/EddieHubCommunity/LinkFree/issues/7747)) ([7810216](https://github.com/EddieHubCommunity/LinkFree/commit/781021620e5dfbd76db07debf664fbf0646c7ed7))
+* icon dropdown shifts layout for suggestions ([#9898](https://github.com/EddieHubCommunity/BioDrop/issues/9898)) ([5f86013](https://github.com/EddieHubCommunity/BioDrop/commit/5f860131d7f395f262c0728ec7e70ca9534a1e3c))
 
 
 
-## [1.154.6](https://github.com/EddieHubCommunity/LinkFree/compare/v1.154.5...v1.154.6) (2023-07-10)
+## [2.99.7](https://github.com/EddieHubCommunity/BioDrop/compare/v2.99.6...v2.99.7) (2024-01-21)
 
 
 ### Bug Fixes
 
-* image gh accelerator overflow ([#8113](https://github.com/EddieHubCommunity/LinkFree/issues/8113)) ([ed63f9a](https://github.com/EddieHubCommunity/LinkFree/commit/ed63f9ac9dee059a5435028290d6d82c364a916c))
+* quality of profile main picture ([#10160](https://github.com/EddieHubCommunity/BioDrop/issues/10160)) ([db3bb82](https://github.com/EddieHubCommunity/BioDrop/commit/db3bb82294900816e25ae5daaf60f40d23d2b8d2))
+
+
+
+## [2.99.6](https://github.com/EddieHubCommunity/BioDrop/compare/v2.99.5...v2.99.6) (2024-01-21)
+
+
+### Bug Fixes
+
+* navbar and tabs overflow ([#9891](https://github.com/EddieHubCommunity/BioDrop/issues/9891)) ([#10023](https://github.com/EddieHubCommunity/BioDrop/issues/10023)) ([6583729](https://github.com/EddieHubCommunity/BioDrop/commit/658372944f6d3de1058128700860a7ad2a7b1c92))
+
+
+
+## [2.99.5](https://github.com/EddieHubCommunity/BioDrop/compare/v2.99.4...v2.99.5) (2024-01-19)
+
+
+### Bug Fixes
+
+* old socials twitter icon to X ([#9972](https://github.com/EddieHubCommunity/BioDrop/issues/9972)) ([6eb7ef4](https://github.com/EddieHubCommunity/BioDrop/commit/6eb7ef4bc39d4bc7c7c063f98432a9b41bd7c8d2))
 
 
 
